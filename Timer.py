@@ -21,10 +21,15 @@ class Timer:
                     self.hours = 0
 
     def prev_second(self):
-        #
-        # Write code here
-        #
-        pass
+        self.seconds -= 1
+        if self.seconds == -1:
+            self.seconds = 59
+            self.minutes -= 1
+            if self.minutes == -1:
+                self.minutes = 59
+                self.hours -= 1
+                if self.hours == -1:
+                    self.hours = 23
 
 def set_time_to_string(seconds, minutes, hours):
     """Function to read in three integer values and convert to a string in the form 
