@@ -9,10 +9,16 @@ class Timer:
         return set_time_to_string(self.seconds, self.minutes, self.hours)
 
     def next_second(self):
-        #
-        # Write code here
-        #
-        pass
+        self.seconds += 1
+        #Check overflow - adjust as required
+        if self.seconds == 60:
+            self.seconds = 0
+            self.minutes += 1
+            if self.minutes == 60:
+                self.minutes = 0
+                self.hours += 1
+                if self.hours == 24:
+                    self.hours = 0
 
     def prev_second(self):
         #
