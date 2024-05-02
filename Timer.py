@@ -1,15 +1,12 @@
 class Timer:
-    def __init__(self):
-        #
-        # Write code here
-        #
-        pass
+    def __init__(self, hours = 0, minutes = 0, seconds = 0):
+        # All values initialised to zero
+        self.seconds = seconds
+        self.minutes = minutes
+        self.hours = hours
 
     def __str__(self):
-        #
-        # Write code here
-        #
-        pass
+        return set_time_to_string(self.seconds, self.minutes, self.hours)
 
     def next_second(self):
         #
@@ -43,18 +40,10 @@ def time_denom_to_string(time):
 
     if time < 10: return "0" + str(time)
     else: return str(time)
-"""
+
 timer = Timer(23, 59, 59)
 print(timer)
 timer.next_second()
 print(timer)
 timer.prev_second()
 print(timer)
-"""
-
-#Testing time to string and time denom funcitons
-
-print(time_denom_to_string(30))
-print(time_denom_to_string(5))
-
-print(set_time_to_string(30, 30, 10))
